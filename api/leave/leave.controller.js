@@ -1,7 +1,7 @@
 const {
   create,
   getLeaves,
-  getLeaveById,
+  getLeaveByEmpId,
   updateLeave,
 } = require("./leave.service");
 
@@ -36,9 +36,9 @@ module.exports = {
       });
     });
   },
-  getLeaveById: (req, res) => {
+  getLeaveByEmpId: (req, res) => {
     const id = req.params.id;
-    getLeaveById(id, (error, results) => {
+    getLeaveByEmpId(id, (error, results) => {
       if (error) {
         // console.log(error);
         return res.status(500).json({
@@ -68,21 +68,4 @@ module.exports = {
       });
     });
   },
-  /* deteleChurch :(req,res) =>{
-        const body = req.body;
-        console.log(body);
-        deleteChurch(body, (error, results) => {
-            if (error) {
-                console.log(error);
-                return res.status(500).json({
-                    success: 0,
-                    message: "Database connection error",
-                });
-            }
-            return res.status(200).json({
-                success: 1,
-                data: results,
-            })
-        })
-    }*/
 };

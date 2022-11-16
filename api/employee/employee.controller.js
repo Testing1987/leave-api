@@ -56,6 +56,7 @@ module.exports = {
   updateEmployee: (req, res) => {
     const body = req.body;
     updateEmployee(body, (error, results) => {
+      console.log(results);
       if (error) {
         return res.status(500).json({
           success: 0,
@@ -71,6 +72,7 @@ module.exports = {
   getEmployeeByName: (req, res) => {
     const name = req.params.name;
     getEmployeeByName(name, (error, results) => {
+      console.log(results);
       if (error) {
         return res.status(500).json({
           success: 0,

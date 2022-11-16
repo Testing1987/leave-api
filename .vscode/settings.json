@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/eafdd846-7e15-4419-aa04-591e4fd8f23d/AppServices/subscriptions/eafdd846-7e15-4419-aa04-591e4fd8f23d/resourceGroups/sst-leaves-group01/providers/Microsoft.Web/sites/ssty-leaves-app",
+    "appService.deploySubpath": "."
+}

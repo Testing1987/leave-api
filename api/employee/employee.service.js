@@ -45,7 +45,7 @@ module.exports = {
     });
   },
   updateEmployee: (data, callback) => {
-    const sql = `update employee set first_name=?, middle_name=?, last_name=?, gender=?, designation=?, joining_date=? where emp_id=?`;
+    const sql = `update leaves_db.employee set first_name=?, middle_name=?, last_name=?, gender=?, designation=?, joining_date=? where emp_id=?`;
     pool.query(
       sql,
       [
@@ -55,6 +55,7 @@ module.exports = {
         data.gender,
         data.designation,
         data.joining_date,
+        data.emp_id,
       ],
       (error, results, fields) => {
         if (error) {
@@ -65,13 +66,13 @@ module.exports = {
     );
   },
   getEmployeeByName: (first_name, callback) => {
-    const sql = `select * from employee where first_name=?`;
+    const sql = `select * from leaves_db.employee where first_name=?`;
     pool.query(sql, [first_name], (error, results, fields) => {
       if (error) {
         console.log(error);
         return callback(error);
       }
-      // console.log(results);
+      console.log(results);
       return callback(null, results[0]);
     });
   },
